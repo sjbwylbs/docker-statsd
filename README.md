@@ -2,6 +2,8 @@
 
 This repository contains Dockerfile of statsd with influxdb and zabbix backend
 
+[![](https://badge.imagelayers.io/jmaitrehenry/statsd:latest.svg)](https://imagelayers.io/?images=jmaitrehenry/statsd:latest 'Get your own badge on imagelayers.io')
+
 ## Base Docker Image
 
 [node:0.12-slim](https://registry.hub.docker.com/_/node/)
