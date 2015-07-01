@@ -19,7 +19,7 @@ This repository contains Dockerfile of statsd with influxdb and zabbix backend
 
 ```
 docker run -d -p 8125:8125/udp \
-	-e "STATSD_PORT=8125"
+	-e "STATSD_PORT=8125" \
 	-e "STATSD_ENABLE_CONSOLE=true" \
 	-e "STATSD_DEBUG=true" \
 	-e "INFLUXDB_VERSION=0.9" \
