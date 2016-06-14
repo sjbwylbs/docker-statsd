@@ -1,20 +1,10 @@
 FROM node:0.12-slim
 
-MAINTAINER Julien Maitrehenry "julien.maitrehenry@me.com"
+MAINTAINER Wenhao Liu "sjbwylbs@gmail.com"
 
-RUN apt-get update \
-	&& apt-get -y install wget git \
-	&& wget http://repo.zabbix.com/zabbix/2.0/debian/pool/main/z/zabbix-release/zabbix-release_2.0-1wheezy_all.deb \
-	&& dpkg -i zabbix-release_2.0-1wheezy_all.deb \
-	&& apt-get update \
-	&& apt-get -y install zabbix-sender \
-	&& git clone --depth=1 https://github.com/etsy/statsd.git \
+RUN  mkdir /statsd \
 	&& cd /statsd \
-	&& npm install https://github.com/bernd/statsd-influxdb-backend/tarball/master \
-	&& npm install statsd-zabbix-backend \
-	&& apt-get remove -y wget git \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
+	&& npm install statsd-zabbix-backend 
 
 ADD config.js /statsd/config.js
 
